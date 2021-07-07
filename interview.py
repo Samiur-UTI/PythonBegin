@@ -1,5 +1,5 @@
-Codeforces problem
-charm = input('Enter a nice array')
+##Codeforces problem
+charm = input('')
 arr = [char for char in charm.split()]
 print(list(map(lambda x: int(x, 10) , arr)))
 ## Create an object from a tuple
