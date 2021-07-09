@@ -17,10 +17,14 @@ class LinkedList ():
         newNode.next = self.head
         self.head = newNode
         self.length += 1
+    def printList(self):
+        temp = self.head
+        while (temp):
+            print (temp.value)
+            temp = temp.next
 
 alpha = LinkedList(2)
-print(alpha)
 alpha.append(10)
-print(alpha.head)
+
 alpha.prepend(15)
-print(alpha)
+alpha.printList()
