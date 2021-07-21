@@ -23,6 +23,7 @@ class LinkedList ():
         while(counter != index):
             currentNode = currentNode.next
             counter += 1
+        return currentNode
     def insert(self,index,value):
         if(index >= self.length):
             return self.append(value)
@@ -33,7 +34,13 @@ class LinkedList ():
             leadIndex.next = newNode
             newNode.next = nextIndex
             self.length += 1
-            return self.printList
+            return self.printList()
+    def remove(self, index):
+        leadIndex = self.traverse(index-1)
+        nextIndex = leadIndex.next
+        leadIndex.next = nextIndex.next
+        self.length -= 1
+        return self.printList()
     def printList(self):
         temp = self.head
         arr = []
@@ -44,6 +51,7 @@ class LinkedList ():
     
 alpha = LinkedList(2)
 alpha.append(10)
-
 alpha.prepend(15)
-alpha.printList()
+alpha.insert(2,44)
+alpha.remove(2)
+
