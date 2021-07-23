@@ -41,6 +41,20 @@ class LinkedList ():
         leadIndex.next = nextIndex.next
         self.length -= 1
         return self.printList()
+    def reverse (self):
+        if self.length == 1:
+            return self.printList()
+        else: 
+            first = self.head
+            second = first.next
+            while (second):
+                temp = second.next
+                second.next = first
+                first = second
+                second = temp
+            self.head.next = None
+            self.head = first
+            return self.printList()
     def printList(self):
         temp = self.head
         arr = []
@@ -53,5 +67,5 @@ alpha = LinkedList(2)
 alpha.append(10)
 alpha.prepend(15)
 alpha.insert(2,44)
-alpha.remove(2)
+alpha.reverse()
 
