@@ -46,6 +46,7 @@ class LinkedList ():
             return self.printList()
         else: 
             first = self.head
+            self.tail = self.head
             second = first.next
             while (second):
                 temp = second.next
